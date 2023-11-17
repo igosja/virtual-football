@@ -1,0 +1,14 @@
+services:
+  laravel.test:
+    ports:
+      - '${APP_PORT:-10010}:80'
+      - '${VITE_PORT:-10013}:${VITE_PORT:-5173}'
+  mysql:
+    ports:
+      - '${FORWARD_DB_PORT:-10011}:3306'
+  redis:
+    ports:
+      - '${FORWARD_REDIS_PORT:-10012}:6379'
+  memcached:
+    ports:
+      - '${FORWARD_MEMCACHED_PORT:-10014}:11211'
