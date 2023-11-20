@@ -18,7 +18,7 @@ return new class extends Migration {
             function (Blueprint $table) {
                 $table->id();
                 $table->longText('exception');
-                $table->unsignedFloat('failed_at');
+                $table->unsignedFloat('failed_at', 17, 6);
                 $table->text('connection');
                 $table->longText('payload');
                 $table->text('queue');
