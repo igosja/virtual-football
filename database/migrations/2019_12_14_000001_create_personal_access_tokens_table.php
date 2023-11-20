@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
+use Database\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -18,13 +18,13 @@ return new class extends Migration {
             function (Blueprint $table) {
                 $table->id();
                 $table->text('abilities')->nullable();
-                $table->unsignedFloat('created_at', 17, 6);
-                $table->unsignedFloat('expires_at', 17, 6)->nullable();
-                $table->unsignedFloat('last_used_at', 17, 6)->nullable();
+                $table->floatDate('created_at');
+                $table->floatDate('expires_at')->nullable();
+                $table->floatDate('last_used_at')->nullable();
                 $table->string('name');
                 $table->string('token', 64)->unique();
                 $table->morphs('tokenable');
-                $table->unsignedFloat('updated_at', 17, 6);
+                $table->floatDate('updated_at');
             }
         );
     }

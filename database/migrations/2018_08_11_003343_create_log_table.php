@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Database\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -17,16 +17,16 @@ return new class extends Migration {
                 config('logtodb.collection'),
                 function (Blueprint $table) {
                     $table->increments('id');
-                    $table->unsignedFloat('created_at', 17, 6);
                     $table->string('channel')->nullable();
                     $table->longText('context')->nullable();
+                    $table->floatDate('created_at');
                     $table->string('datetime')->nullable();
                     $table->text('extra')->nullable();
-                    $table->text('message')->nullable();
                     $table->integer('level')->default(0);
                     $table->string('level_name', 20);
+                    $table->text('message')->nullable();
                     $table->integer('unix_time');
-                    $table->unsignedFloat('updated_at', 17, 6);
+                    $table->floatDate('updated_at');
                 }
             );
         }
