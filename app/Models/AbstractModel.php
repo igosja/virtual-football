@@ -4,16 +4,14 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Traits\ModelDateFormat;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class AbstractModel
  * @package App\Models
  */
-class AbstractModel extends Model
+abstract class AbstractModel extends Model
 {
-    /**
-     * @var string $dateFormat
-     */
-    protected $dateFormat = 'U.u';
+    use ModelDateFormat;
 }

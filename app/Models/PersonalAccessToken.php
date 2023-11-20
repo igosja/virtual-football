@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Traits\ModelDateFormat;
 use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 /**
@@ -22,8 +23,5 @@ use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
  */
 class PersonalAccessToken extends SanctumPersonalAccessToken
 {
-    /**
-     * @var string $dateFormat
-     */
-    protected $dateFormat = 'U.u';
+    use ModelDateFormat;
 }
