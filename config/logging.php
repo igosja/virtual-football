@@ -133,7 +133,8 @@ return [
         'database' => [
             'driver' => 'custom',
             'via' => danielme85\LaravelLogToDB\LogToDbHandler::class,
-            'name' => 'Basic DB Logging'
+            'name' => 'Basic DB Logging',
+            'max_hours' => env('LOG_DB_MAX_HOURS', false),
         ],
     ],
 
