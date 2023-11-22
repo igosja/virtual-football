@@ -47,7 +47,7 @@ const LoginPage = () => {
 
                 localStorage.setItem('access_token', data.data.data.token);
 
-                setAuth(true)
+                setAuth(true);
                 navigate(from, {replace: true});
             })
             .catch(function (error) {
