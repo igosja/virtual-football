@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
-use Database\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+use App\Database\Migration;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -13,20 +13,22 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create(
-            self::TABLE,
-            function (Blueprint $table) {
-                $table->id();
-                $table->text('abilities')->nullable();
-                $table->floatDate('created_at');
-                $table->floatDate('expires_at')->nullable();
-                $table->floatDate('last_used_at')->nullable();
-                $table->string('name');
-                $table->string('token', 64)->unique();
-                $table->morphs('tokenable');
-                $table->floatDate('updated_at');
-            }
-        );
+        if (false === Schema::hasTable(self::TABLE)) {
+            Schema::create(
+                self::TABLE,
+                function (Blueprint $table) {
+                    $table->id();
+                    $table->text('abilities')->nullable();
+                    $this->floatDate('created_at', $table);
+                    $this->floatDate('expires_at', $table)->nullable();
+                    $this->floatDate('last_used_at', $table)->nullable();
+                    $table->string('name');
+                    $table->string('token', 64)->unique();
+                    $table->morphs('tokenable');
+                    $this->floatDate('updated_at', $table);
+                }
+            );
+        }
     }
 
     /**
