@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\SignupRequest;
 use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Hash;
@@ -29,6 +30,23 @@ class AuthController extends AbstractController
                 'login' => ['The provided credentials are incorrect.'],
             ]);
         }
+
+        $token = $user->createToken('token');
+
+        return new JsonResource(['token' => $token->plainTextToken]);
+    }
+
+    /**
+     * @param SignupRequest $request
+     * @return JsonResource
+     */
+    public function signup(SignupRequest $request): JsonResource
+    {
+        $user = new User();
+        $user->email = $request->validated('email');
+        $user->login = $request->validated('login');
+        $user->password = Hash::make($request->validated('password'));
+        $user->save();
 
         $token = $user->createToken('token');
 

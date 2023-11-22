@@ -11,6 +11,14 @@ use Laravel\Sanctum\HasApiTokens;
 /**
  * Class User
  * @package App\Models
+ *
+ * @property int id
+ * @property int created_at
+ * @property int email
+ * @property int email_verified_at
+ * @property int login
+ * @property int password
+ * @property int updated_at
  */
 class User extends \Illuminate\Foundation\Auth\User
 {
@@ -29,7 +37,7 @@ class User extends \Illuminate\Foundation\Auth\User
      */
     protected $fillable = [
         'email',
-        'name',
+        'login',
         'password',
     ];
 
@@ -38,6 +46,5 @@ class User extends \Illuminate\Foundation\Auth\User
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 }

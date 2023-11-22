@@ -23,7 +23,6 @@ return new class extends Migration {
                     $this->floatDate('email_verified_at', $table)->nullable();
                     $table->string('login');
                     $table->string('password');
-                    $table->rememberToken();
                     $this->floatDate('updated_at', $table);
                 }
             );
