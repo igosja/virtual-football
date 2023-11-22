@@ -1,4 +1,5 @@
 import MainLayout from "../layout/MainLayout";
+import React from "react";
 
 function ErrorPage() {
     return (
@@ -11,4 +12,4 @@ function ErrorPage() {
     );
 }
 
-export default ErrorPage;
+export default React.memo(ErrorPage);
