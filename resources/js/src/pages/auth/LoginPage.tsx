@@ -64,44 +64,48 @@ const LoginPage = () => {
     return (
         <MainLayout>
             <h1 className="text-center">Вход</h1>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
-                    <Form.Label>Логин</Form.Label>
-                    <Form.Control
-                        autoFocus
-                        type="text"
-                        placeholder="Логин"
-                        name="login"
-                        value={inputs.login}
-                        onChange={handleChange}
-                        isInvalid={!!errors.login.length}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                        {errors.login[0]}
-                    </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Пароль</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Пароль"
-                        name="password"
-                        value={inputs.password}
-                        onChange={handleChange}
-                        isInvalid={!!errors.password.length}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                        {errors.password[0]}
-                    </Form.Control.Feedback>
-                </Form.Group>
-                <Row>
-                    <Col className='text-center'>
-                        <Button type="submit">
-                            Вход
-                        </Button>
-                    </Col>
-                </Row>
-            </Form>
+            <Row className='justify-content-md-center'>
+                <Col className='col-md-6'>
+                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Логин</Form.Label>
+                            <Form.Control
+                                autoFocus
+                                type="text"
+                                placeholder="Логин"
+                                name="login"
+                                value={inputs.login}
+                                onChange={handleChange}
+                                isInvalid={!!errors.login.length}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.login[0]}
+                            </Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Пароль</Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Пароль"
+                                name="password"
+                                value={inputs.password}
+                                onChange={handleChange}
+                                isInvalid={!!errors.password.length}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                                {errors.password[0]}
+                            </Form.Control.Feedback>
+                        </Form.Group>
+                        <Row>
+                            <Col className='text-center'>
+                                <Button type="submit">
+                                    Вход
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Form>
+                </Col>
+            </Row>
             <Row className='mt-2'>
                 <Col className='text-center'>
                     <Link to={'/signup'}>
