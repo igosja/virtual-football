@@ -2,7 +2,6 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Footer() {
-    // @ts-ignore
     return (
         <footer id="footer" className="mt-auto py-3 bg-light">
             <div className="container">

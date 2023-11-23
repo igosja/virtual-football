@@ -1,14 +1,16 @@
 import React from "react";
 import {Container, Nav, Navbar, Offcanvas} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import LoginLink from "../../components/layout/header/LoginLink";
+import LogoutLink from "../../components/layout/header/LogoutLink";
+import SignupLink from "../../components/layout/header/SignupLink";
 
 function Header() {
-    // @ts-ignore
     return (
         <header id="header">
             <Navbar expand={false} className="bg-body-tertiary mb-3">
                 <Container>
-                    <Navbar.Brand href={'/'}>Navbar Offcanvas</Navbar.Brand>
+                    <Navbar.Brand href={'/'}>VF</Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand`}/>
                     <Navbar.Offcanvas
                         id={'canvas-navbar'}
@@ -23,9 +25,9 @@ function Header() {
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Link to={'/'} className="nav-link">Главная</Link>
-                                <Link to={'/login'} className="nav-link">Вход</Link>
-                                <Link to={'/signup'} className="nav-link">Регистрация</Link>
-                                <Link to={'/logout'} className="nav-link">Выход</Link>
+                                <LoginLink/>
+                                <SignupLink/>
+                                <LogoutLink/>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>

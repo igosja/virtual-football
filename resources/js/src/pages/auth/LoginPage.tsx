@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import React, {useState} from 'react';
 import axios from "axios";
+import {Col, Row} from "react-bootstrap";
 
 const LoginPage = () => {
     const {setAuth} = useAuth();
@@ -63,7 +64,6 @@ const LoginPage = () => {
     return (
         <MainLayout>
             <h1 className="text-center">Вход</h1>
-
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Логин</Form.Label>
@@ -94,11 +94,25 @@ const LoginPage = () => {
                         {errors.password[0]}
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Button type="submit">
-                    Вход
-                </Button>
+                <Row>
+                    <Col className='text-center'>
+                        <Button type="submit">
+                            Вход
+                        </Button>
+                    </Col>
+                </Row>
             </Form>
-            <Link to={'/signup'}>Регистрация</Link>
+            <Row className='mt-2'>
+                <Col className='text-center'>
+                    <Link to={'/signup'}>
+                        Регистрация
+                    </Link>
+                    {' | '}
+                    <Link to="#">
+                        Забыли пароль?
+                    </Link>
+                </Col>
+            </Row>
         </MainLayout>
     )
 }
