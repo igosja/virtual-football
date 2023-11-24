@@ -1,10 +1,10 @@
 import {Route, Routes} from 'react-router-dom';
 import {PrivateRoute} from '../components/PrivateRoute';
-import ErrorPage from "../pages/site/ErrorPage";
-import LoginPage from "../pages/auth/LoginPage";
-import LogoutPage from "../pages/auth/LogoutPage";
-import HomePage from "../pages/site/HomePage";
-import SignupPage from "../pages/auth/SignupPage";
+import ErrorPage from "../pages/public/site/ErrorPage";
+import LoginPage from "../pages/public/auth/LoginPage";
+import LogoutPage from "../pages/public/auth/LogoutPage";
+import HomePage from "../pages/public/site/HomePage";
+import SignupPage from "../pages/public/auth/SignupPage";
 
 const useRoutes = () => {
     return (

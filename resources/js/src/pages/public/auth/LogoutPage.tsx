@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 
 function LogoutPage() {
     const {setAuth} = useAuth();

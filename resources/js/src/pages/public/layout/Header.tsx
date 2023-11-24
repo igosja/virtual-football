@@ -1,9 +1,9 @@
 import React from "react";
 import {Container, Nav, Navbar, Offcanvas} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import LoginLink from "../../components/layout/header/LoginLink";
-import LogoutLink from "../../components/layout/header/LogoutLink";
-import SignupLink from "../../components/layout/header/SignupLink";
+import LoginLink from "../../../components/public/layout/header/LoginLink";
+import LogoutLink from "../../../components/public/layout/header/LogoutLink";
+import SignupLink from "../../../components/public/layout/header/SignupLink";
 
 function Header() {
     return (

@@ -1,5 +1,5 @@
-import useAuth from "../../hooks/useAuth";
-import {Link, useNavigate} from 'react-router-dom';
+import useAuth from "../../../hooks/useAuth";
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import MainLayout from "../layout/MainLayout";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -7,23 +7,22 @@ import React, {useState} from 'react';
 import axios from "axios";
 import {Col, Row} from "react-bootstrap";
 
-const SignupPage = () => {
+const LoginPage = () => {
     const {setAuth} = useAuth();
     const navigate = useNavigate();
-    const from = '/';
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
-    const url = '/api/signup';
+    const url = '/api/login';
 
     const [validated, setValidated] = useState(false);
 
     const [inputs, setInputs] = useState({
-        email: '',
         login: '',
         password: '',
     });
 
     const [errors, setErrors] = useState({
-        email: [],
         login: [],
         password: [],
     });
@@ -43,19 +42,17 @@ const SignupPage = () => {
             .post(url, inputs)
             .then(data => {
                 setErrors({
-                    email: [],
                     login: [],
                     password: [],
                 });
 
                 localStorage.setItem('access_token', data.data.data.token);
 
-                setAuth(true)
+                setAuth(true);
                 navigate(from, {replace: true});
             })
             .catch(function (error) {
                 setErrors({
-                    email: error.response.data.errors.email ?? [],
                     login: error.response.data.errors.login ?? [],
                     password: error.response.data.errors.password ?? [],
                 });
@@ -66,7 +63,7 @@ const SignupPage = () => {
 
     return (
         <MainLayout>
-            <h1 className="text-center">Регистрация</h1>
+            <h1 className="text-center">Вход</h1>
             <Row className='justify-content-md-center'>
                 <Col className='col-md-6'>
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -86,20 +83,6 @@ const SignupPage = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                placeholder="Email"
-                                name="email"
-                                value={inputs.email}
-                                onChange={handleChange}
-                                isInvalid={!!errors.email.length}
-                            />
-                            <Form.Control.Feedback type="invalid">
-                                {errors.email[0]}
-                            </Form.Control.Feedback>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
                             <Form.Label>Пароль</Form.Label>
                             <Form.Control
                                 type="password"
@@ -116,7 +99,7 @@ const SignupPage = () => {
                         <Row>
                             <Col className='text-center'>
                                 <Button type="submit">
-                                    Регистрация
+                                    Вход
                                 </Button>
                             </Col>
                         </Row>
@@ -125,8 +108,12 @@ const SignupPage = () => {
             </Row>
             <Row className='mt-2'>
                 <Col className='text-center'>
-                    <Link to={'/login'}>
-                        Войти
+                    <Link to={'/signup'}>
+                        Регистрация
+                    </Link>
+                    {' | '}
+                    <Link to="#">
+                        Забыли пароль?
                     </Link>
                 </Col>
             </Row>
@@ -134,4 +121,4 @@ const SignupPage = () => {
     )
 }
 
-export default React.memo(SignupPage)
+export default React.memo(LoginPage)
