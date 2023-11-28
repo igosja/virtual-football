@@ -7,6 +7,7 @@ use App\Traits\ModelDateFormat;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * Class User
@@ -22,7 +23,7 @@ use Laravel\Sanctum\HasApiTokens;
  */
 class User extends \Illuminate\Foundation\Auth\User
 {
-    use HasApiTokens, HasFactory, ModelDateFormat, Notifiable;
+    use HasApiTokens, HasFactory, HasRoles, ModelDateFormat, Notifiable;
 
     /**
      * @var string[] $casts
