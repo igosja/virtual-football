@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Admin\Requests\Auth;
+namespace App\Http\Requests\Auth;
 
-use App\Http\Public\Requests\AbstractRequest;
+use App\Http\Requests\AbstractRequest;
 
 /**
- * Class LoginRequest
- * @package App\Http\Admin\Requests\Auth
+ * Class AdminLoginRequest
+ * @package App\Http\Requests\Auth
  */
 class LoginRequest extends AbstractRequest
 {

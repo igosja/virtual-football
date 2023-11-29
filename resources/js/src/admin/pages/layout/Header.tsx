@@ -1,7 +1,6 @@
 import React from "react";
 import {Container, Nav, Navbar, Offcanvas} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import LogoutLink from "../../components/layout/header/LogoutLink";
 
 function Header() {
     return (
@@ -22,8 +21,9 @@ function Header() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Link to={'/'} className="nav-link">Главная</Link>
-                                <LogoutLink/>
+                                <Link to={'/admin'} className="nav-link">Home</Link>
+                                <Link to={'/admin/users'} className="nav-link">Users</Link>
+                                <Link to={'/admin/logout'} className="nav-link">Logout</Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>

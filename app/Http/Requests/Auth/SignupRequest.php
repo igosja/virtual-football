@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Public\Requests\Auth;
+namespace App\Http\Requests\Auth;
 
-use App\Http\Public\Requests\AbstractRequest;
+use App\Http\Requests\AbstractRequest;
 use Illuminate\Validation\Rules\Password;
 
 /**
  * Class SignupRequest
- * @package App\Http\Public\Requests\Auth
+ * @package App\Http\Requests\Auth
  */
 class SignupRequest extends AbstractRequest
 {

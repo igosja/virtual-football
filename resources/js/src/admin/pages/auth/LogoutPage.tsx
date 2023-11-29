@@ -10,7 +10,7 @@ function LogoutPage() {
     useEffect(() => {
         localStorage.removeItem('admin_access_token');
         setAuth(false);
-        navigate('/');
+        navigate('/admin');
     }, [navigate])
 
     return (

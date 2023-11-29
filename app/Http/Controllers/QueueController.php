@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Public\Controllers;
+namespace App\Http\Controllers;
 
 use App\Jobs\ProcessLog;
 use App\Models\Log;
 
 /**
  * Class QueueController
- * @package App\Http\Public\Controllers
+ * @package App\Http\Controllers
  */
 class QueueController extends AbstractController
 {
