@@ -31,7 +31,7 @@ function IndexPage() {
                     fields: 'id,login',
                     filters: {
                         id: searchParams.get('filters.id'),
-                        name: searchParams.get('filters.name'),
+                        login: searchParams.get('filters.login'),
                     },
                     sorting: searchParams.get('sorting'),
                     page: searchParams.get('page'),
