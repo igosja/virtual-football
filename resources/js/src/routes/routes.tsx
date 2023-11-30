@@ -2,6 +2,10 @@ import {Route, Routes} from 'react-router-dom';
 import {PrivateRoute} from '../public/components/PrivateRoute';
 import {AdminPrivateRoute} from '../admin/components/PrivateRoute';
 import AdminHomePage from "../admin/pages/site/HomePage";
+import AdminCountryCreatePage from "../admin/pages/country/CreatePage";
+import AdminCountryEditPage from "../admin/pages/country/EditPage";
+import AdminCountryIndexPage from "../admin/pages/country/IndexPage";
+import AdminCountryViewPage from "../admin/pages/country/ViewPage";
 import AdminLoginPage from "../admin/pages/auth/LoginPage";
 import AdminLogoutPage from "../admin/pages/auth/LogoutPage";
 import AdminUserIndexPage from "../admin/pages/user/IndexPage";
@@ -28,6 +32,10 @@ const useRoutes = () => {
                 <Route path="/admin" element={<AdminHomePage/>}/>
                 <Route path="/admin/users" element={<AdminUserIndexPage/>}/>
                 <Route path="/admin/users/:id" element={<AdminUserViewPage/>}/>
+                <Route path="/admin/countries" element={<AdminCountryIndexPage/>}/>
+                <Route path="/admin/countries/:id" element={<AdminCountryViewPage/>}/>
+                <Route path="/admin/countries/create" element={<AdminCountryCreatePage/>}/>
+                <Route path="/admin/countries/edit/:id" element={<AdminCountryEditPage/>}/>
                 <Route path="/admin/logout" element={<AdminLogoutPage/>}/>
             </Route>
 

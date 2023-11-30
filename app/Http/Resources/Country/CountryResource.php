@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Resources\User;
+namespace App\Http\Resources\Country;
 
 use App\Http\Resources\AbstractResource;
 
 /**
- * Class UserResource
- * @package App\Http\Resources\Lunch
+ * Class CountryResource
+ * @package App\Http\Resources\Country
  */
-class UserResource extends AbstractResource
+class CountryResource extends AbstractResource
 {
     /**
      * @var array $fields
@@ -17,9 +17,7 @@ class UserResource extends AbstractResource
     protected array $fields = [
         'id',
         'created_at',
-        'email',
-        'email_verified_at',
-        'login',
+        'name',
         'updated_at',
     ];
 }

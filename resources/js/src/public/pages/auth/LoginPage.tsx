@@ -63,16 +63,16 @@ const LoginPage = () => {
 
     return (
         <MainLayout>
-            <h1 className="text-center">Вход</h1>
+            <h1 className="text-center">Login</h1>
             <Row className='justify-content-md-center'>
                 <Col className='col-md-6'>
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Логин</Form.Label>
+                            <Form.Label>Login</Form.Label>
                             <Form.Control
                                 autoFocus
                                 type="text"
-                                placeholder="Логин"
+                                placeholder="Login"
                                 name="login"
                                 value={inputs.login}
                                 onChange={handleChange}
@@ -83,10 +83,10 @@ const LoginPage = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Пароль</Form.Label>
+                            <Form.Label>Password</Form.Label>
                             <Form.Control
                                 type="password"
-                                placeholder="Пароль"
+                                placeholder="Password"
                                 name="password"
                                 value={inputs.password}
                                 onChange={handleChange}
@@ -99,7 +99,7 @@ const LoginPage = () => {
                         <Row>
                             <Col className='text-center'>
                                 <Button type="submit">
-                                    Вход
+                                    Login
                                 </Button>
                             </Col>
                         </Row>
@@ -109,11 +109,11 @@ const LoginPage = () => {
             <Row className='mt-2'>
                 <Col className='text-center'>
                     <Link to={'/signup'}>
-                        Регистрация
+                        Signup
                     </Link>
                     {' | '}
                     <Link to="#">
-                        Забыли пароль?
+                        Forgot password?
                     </Link>
                 </Col>
             </Row>

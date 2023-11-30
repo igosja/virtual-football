@@ -6,7 +6,7 @@ function LoginLink() {
     const {isAuthenticated} = useAuth();
     if (true !== isAuthenticated) {
         return (
-            <Link to={'/login'} className="nav-link">Вход</Link>
+            <Link to={'/login'} className="nav-link">Login</Link>
         );
     }
 }

@@ -15,10 +15,10 @@ use Spatie\Permission\Traits\HasRoles;
  *
  * @property int id
  * @property int created_at
- * @property int email
+ * @property string email
  * @property int email_verified_at
- * @property int login
- * @property int password
+ * @property string login
+ * @property string password
  * @property int updated_at
  */
 class User extends \Illuminate\Foundation\Auth\User

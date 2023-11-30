@@ -66,16 +66,16 @@ const SignupPage = () => {
 
     return (
         <MainLayout>
-            <h1 className="text-center">Регистрация</h1>
+            <h1 className="text-center">Signup</h1>
             <Row className='justify-content-md-center'>
                 <Col className='col-md-6'>
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Логин</Form.Label>
+                            <Form.Label>Login</Form.Label>
                             <Form.Control
                                 autoFocus
                                 type="text"
-                                placeholder="Логин"
+                                placeholder="Login"
                                 name="login"
                                 value={inputs.login}
                                 onChange={handleChange}
@@ -100,10 +100,10 @@ const SignupPage = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Пароль</Form.Label>
+                            <Form.Label>Password</Form.Label>
                             <Form.Control
                                 type="password"
-                                placeholder="Пароль"
+                                placeholder="Password"
                                 name="password"
                                 value={inputs.password}
                                 onChange={handleChange}
@@ -116,7 +116,7 @@ const SignupPage = () => {
                         <Row>
                             <Col className='text-center'>
                                 <Button type="submit">
-                                    Регистрация
+                                    Signup
                                 </Button>
                             </Col>
                         </Row>
@@ -126,7 +126,7 @@ const SignupPage = () => {
             <Row className='mt-2'>
                 <Col className='text-center'>
                     <Link to={'/login'}>
-                        Войти
+                        Login
                     </Link>
                 </Col>
             </Row>

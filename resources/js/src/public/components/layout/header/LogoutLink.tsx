@@ -6,7 +6,7 @@ function LogoutLink() {
     const {isAuthenticated} = useAuth();
     if (true === isAuthenticated) {
         return (
-            <Link to={'/logout'} className="nav-link">Выход</Link>
+            <Link to={'/logout'} className="nav-link">Logout</Link>
         );
     }
 }

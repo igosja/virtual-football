@@ -31,16 +31,16 @@ class UserController extends AbstractController
             $sortingField = $sorting;
         }
 
-        $dishes = User::orderBy($sortingField, $sortingOrder);
+        $users = User::orderBy($sortingField, $sortingOrder);
         if ($request->validated('filters.id')) {
-            $dishes = $dishes->where('id', $request->validated('filters.id'));
+            $users = $users->where('id', $request->validated('filters.id'));
         }
         if ($request->validated('filters.login')) {
-            $dishes = $dishes->where('login', 'like', '%' . $request->validated('filters.login') . '%');
+            $users = $users->where('login', 'like', '%' . $request->validated('filters.login') . '%');
         }
-        $dishes = $dishes->paginate();
+        $users = $users->paginate();
 
-        return UserResource::collection($dishes);
+        return UserResource::collection($users);
     }
 
     /**

@@ -23,6 +23,7 @@ function Header() {
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Link to={'/admin'} className="nav-link">Home</Link>
                                 <Link to={'/admin/users'} className="nav-link">Users</Link>
+                                <Link to={'/admin/countries'} className="nav-link">Countries</Link>
                                 <Link to={'/admin/logout'} className="nav-link">Logout</Link>
                             </Nav>
                         </Offcanvas.Body>

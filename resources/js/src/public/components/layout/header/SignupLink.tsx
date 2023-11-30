@@ -6,7 +6,7 @@ function SignupLink() {
     const {isAuthenticated} = useAuth();
     if (true !== isAuthenticated) {
         return (
-            <Link to={'/signup'} className="nav-link">Регистрация</Link>
+            <Link to={'/signup'} className="nav-link">Signup</Link>
         );
     }
 }
