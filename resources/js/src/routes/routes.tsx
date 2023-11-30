@@ -2,6 +2,10 @@ import {Route, Routes} from 'react-router-dom';
 import {PrivateRoute} from '../public/components/PrivateRoute';
 import {AdminPrivateRoute} from '../admin/components/PrivateRoute';
 import AdminHomePage from "../admin/pages/site/HomePage";
+import AdminCityCreatePage from "../admin/pages/city/CreatePage";
+import AdminCityEditPage from "../admin/pages/city/EditPage";
+import AdminCityIndexPage from "../admin/pages/city/IndexPage";
+import AdminCityViewPage from "../admin/pages/city/ViewPage";
 import AdminCountryCreatePage from "../admin/pages/country/CreatePage";
 import AdminCountryEditPage from "../admin/pages/country/EditPage";
 import AdminCountryIndexPage from "../admin/pages/country/IndexPage";
@@ -30,13 +34,17 @@ const useRoutes = () => {
 
             <Route element={<AdminPrivateRoute/>}>
                 <Route path="/admin" element={<AdminHomePage/>}/>
-                <Route path="/admin/users" element={<AdminUserIndexPage/>}/>
-                <Route path="/admin/users/:id" element={<AdminUserViewPage/>}/>
+                <Route path="/admin/cities" element={<AdminCityIndexPage/>}/>
+                <Route path="/admin/cities/:id" element={<AdminCityViewPage/>}/>
+                <Route path="/admin/cities/create" element={<AdminCityCreatePage/>}/>
+                <Route path="/admin/cities/edit/:id" element={<AdminCityEditPage/>}/>
                 <Route path="/admin/countries" element={<AdminCountryIndexPage/>}/>
                 <Route path="/admin/countries/:id" element={<AdminCountryViewPage/>}/>
                 <Route path="/admin/countries/create" element={<AdminCountryCreatePage/>}/>
                 <Route path="/admin/countries/edit/:id" element={<AdminCountryEditPage/>}/>
                 <Route path="/admin/logout" element={<AdminLogoutPage/>}/>
+                <Route path="/admin/users" element={<AdminUserIndexPage/>}/>
+                <Route path="/admin/users/:id" element={<AdminUserViewPage/>}/>
             </Route>
 
             <Route path="/admin/login" element={<AdminLoginPage/>}/>
