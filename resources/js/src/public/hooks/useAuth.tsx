@@ -7,4 +7,4 @@ function useAuth() {
     )
 }
 
-export default useAuth
+export default useAuth;

@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import axios from '../../components/axios/Axios';
 import {Link, useParams} from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 
 function ViewPage() {
-    const url = '/api/cities/';
+    const url = 'cities/';
     const [city, setCity] = useState({
         id: 0,
         country_id: 0,

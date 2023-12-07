@@ -3,16 +3,16 @@ import {Link, useNavigate} from 'react-router-dom';
 import MainLayout from "../layout/MainLayout";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Col, Row} from "react-bootstrap";
 
 const SignupPage = () => {
-    const {setAuth} = useAuth();
+    const {setAuth, isAuthenticated} = useAuth();
     const navigate = useNavigate();
     const from = '/';
 
-    const url = '/api/signup';
+    const url = 'signup';
 
     const [validated, setValidated] = useState(false);
 
@@ -63,6 +63,12 @@ const SignupPage = () => {
 
         setValidated(true);
     };
+
+    useEffect(() => {
+        if (true === isAuthenticated) {
+            navigate('/', {replace: true});
+        }
+    });
 
     return (
         <MainLayout>

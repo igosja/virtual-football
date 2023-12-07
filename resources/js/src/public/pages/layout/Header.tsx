@@ -24,7 +24,7 @@ function Header() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Link to={'/'} className="nav-link">Главная</Link>
+                                <Link to={'/'} className="nav-link">Home</Link>
                                 <LoginLink/>
                                 <SignupLink/>
                                 <LogoutLink/>

@@ -2,18 +2,18 @@ import useAuth from "../../hooks/useAuth";
 import {useLocation, useNavigate} from 'react-router-dom';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import React, {useState} from 'react';
-import axios from "axios";
+import React, {useEffect, useState} from 'react';
+import axios from '../../components/axios/Axios';
 import {Col, Row} from "react-bootstrap";
 import LoginLayout from "../layout/LoginLayout";
 
 const LoginPage = () => {
-    const {setAuth} = useAuth();
+    const {setAuth, isAuthenticated} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    const url = '/api/admin/login';
+    const url = 'admin/login';
 
     const [validated, setValidated] = useState(false);
 
@@ -60,6 +60,12 @@ const LoginPage = () => {
 
         setValidated(true);
     };
+
+    useEffect(() => {
+        if (true === isAuthenticated) {
+            navigate('/admin', {replace: true});
+        }
+    });
 
     return (
         <LoginLayout>

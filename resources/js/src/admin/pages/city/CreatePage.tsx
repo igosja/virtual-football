@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../components/axios/Axios';
 import MainLayout from "../layout/MainLayout";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 function CreatePage() {
     const navigate = useNavigate();
-    const url = '/api/cities';
+    const url = 'cities';
     const [formData, setFormData] = useState({
         country_id: 0,
         name: '',

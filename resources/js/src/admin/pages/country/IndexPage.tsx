@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import axios from '../../components/axios/Axios';
 import MainLayout from "../layout/MainLayout";
 import {Link, useSearchParams} from "react-router-dom";
 import Pagination from "../../components/Pagination";
 import HeaderRow from "../../components/HeaderRow";
 
 function IndexPage() {
-    const url = '/api/countries';
+    const url = 'countries';
     const [countries, setCountries] = useState([]);
     const [meta, setMeta] = useState({
         from: 1,

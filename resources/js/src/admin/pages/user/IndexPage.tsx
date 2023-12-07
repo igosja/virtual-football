@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import axios from '../../components/axios/Axios';
 import MainLayout from "../layout/MainLayout";
 import {Link, useSearchParams} from "react-router-dom";
 import Pagination from "../../components/Pagination";
 import HeaderRow from "../../components/HeaderRow";
 
 function IndexPage() {
-    const url = '/api/users';
+    const url = 'users';
     const [users, setUsers] = useState([]);
     const [meta, setMeta] = useState({
         from: 1,
@@ -24,9 +24,6 @@ function IndexPage() {
         });
         axios
             .get(url + '?page=' + (searchParams.get('page') ?? 1), {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('admin_access_token')}`
-                },
                 params: {
                     fields: 'id,login',
                     filters: {

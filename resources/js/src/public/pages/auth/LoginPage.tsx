@@ -3,17 +3,17 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import MainLayout from "../layout/MainLayout";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import React, {useState} from 'react';
-import axios from "axios";
+import React, {useEffect, useState} from 'react';
+import axios from '../../components/axios/Axios';
 import {Col, Row} from "react-bootstrap";
 
 const LoginPage = () => {
-    const {setAuth} = useAuth();
+    const {setAuth, isAuthenticated} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    const url = '/api/login';
+    const url = 'login';
 
     const [validated, setValidated] = useState(false);
 
@@ -49,6 +49,7 @@ const LoginPage = () => {
                 localStorage.setItem('access_token', data.data.data.token);
 
                 setAuth(true);
+
                 navigate(from, {replace: true});
             })
             .catch(function (error) {
@@ -60,6 +61,12 @@ const LoginPage = () => {
 
         setValidated(true);
     };
+
+    useEffect(() => {
+        if (true === isAuthenticated) {
+            navigate('/', {replace: true});
+        }
+    });
 
     return (
         <MainLayout>
