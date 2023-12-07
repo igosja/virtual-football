@@ -63,7 +63,33 @@ function IndexPage() {
                     </Link>
                 </li>
             </ul>
-            <GridView/>
+            <GridView config={{
+                columns: [
+                    {
+                        attribute: "city_id",
+                        headerOptions: {
+                            class: "col-lg-1"
+                        },
+                        label: "ID"
+                    },
+                    {
+                        attribute: "city_name",
+                        label: "Название"
+                    },
+                    {
+                        class: "yii\\grid\\ActionColumn",
+                        contentOptions: {
+                            class: "text-center"
+                        },
+                        headerOptions: {
+                            class: "col-lg-1"
+                        },
+                        template: "{view}"
+                    }
+                ],
+                dataProvider: "data",
+                filterModel: "search"
+            }}/>
             <div className="row">
                 <div id="w0" className="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
                     <div className="summary">

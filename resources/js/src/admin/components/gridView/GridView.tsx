@@ -1,6 +1,6 @@
 import React from "react";
 
-function GridView() {
+function GridView({config}) {
     return (
         <div className='row'></div>
     );
