@@ -50,12 +50,18 @@ function IndexPage() {
 
     return (
         <MainLayout>
-            <h1 className="text-center">Cities</h1>
-
-            <Link to={'/admin/cities/create'}>
-                Create
-            </Link>
-
+            <div className="row">
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h3 className="page-header">Cities</h3>
+                </div>
+            </div>
+            <ul className="list-inline preview-links text-center">
+                <li>
+                    <Link className='btn btn-default' to={'/admin/cities/create'}>
+                        Create
+                    </Link>
+                </li>
+            </ul>
             <div className="row">
                 <div id="w0" className="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
                     <div className="summary">
