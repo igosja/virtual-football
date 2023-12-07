@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout";
 import {Link, useSearchParams} from "react-router-dom";
 import Pagination from "../../components/Pagination";
 import HeaderRow from "../../components/HeaderRow";
+import GridView from "../../components/gridView/GridView";
 
 function IndexPage() {
     const url = 'cities';
@@ -62,6 +63,7 @@ function IndexPage() {
                     </Link>
                 </li>
             </ul>
+            <GridView/>
             <div className="row">
                 <div id="w0" className="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
                     <div className="summary">
