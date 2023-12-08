@@ -66,29 +66,29 @@ function IndexPage() {
             <GridView config={{
                 columns: [
                     {
-                        attribute: "city_id",
+                        attribute: 'id',
                         headerOptions: {
-                            class: "col-lg-1"
+                            class: 'col-lg-1',
                         },
-                        label: "ID"
+                        label: 'ID',
                     },
                     {
-                        attribute: "city_name",
-                        label: "Название"
+                        attribute: 'name',
+                        label: 'Name',
                     },
                     {
-                        class: "yii\\grid\\ActionColumn",
+                        class: 'yii\\grid\\ActionColumn',
                         contentOptions: {
-                            class: "text-center"
+                            class: 'text-center',
                         },
                         headerOptions: {
-                            class: "col-lg-1"
+                            class: 'col-lg-1',
                         },
-                        template: "{view}"
-                    }
+                        template: '{view}',
+                    },
                 ],
-                dataProvider: "data",
-                filterModel: "search"
+                apiUrl: 'cities',
+                filterModel: 'search',
             }}/>
             <div className="row">
                 <div id="w0" className="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
