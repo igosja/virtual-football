@@ -1,54 +1,59 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import axios from "../axios/Axios";
+import {useSearchParams} from "react-router-dom";
+import Pagination from "./pagination/Pagination";
+import Summary from "./summary/Summary";
+import Table from "./table/Table";
 
 function GridView({config}) {
     const initConfig = {
+        columns: [],
         apiUrl: 'users',
-        test: true,
+        filterModel: 'search',
     };
-    const realConfig = {...initConfig, ...config};
-    console.log(realConfig);
+    const currentConfig = {...initConfig, ...config};
+
+    const [items, setItems] = useState([]);
+    const [meta, setMeta] = useState({
+        from: 1,
+        to: 1,
+        total: 1,
+        links: []
+    });
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const fetchData = () => {
+        let fields = [];
+        let filters = {};
+        currentConfig.columns.map(column => {
+            fields.push(column.attribute);
+            filters[column.attribute] = searchParams.get('filters.' + column.attribute);
+        });
+        axios
+            .get(currentConfig.apiUrl + '?page=' + (searchParams.get('page') ?? 1), {
+                params: {
+                    fields: fields.join(','),
+                    filters: filters,
+                    sorting: searchParams.get('sorting'),
+                    page: searchParams.get('page'),
+                },
+            })
+            .then(data => {
+                setItems(data.data.data)
+                setMeta(data.data.meta)
+            });
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, [setSearchParams]);
+
     return (
         <div className='row'>
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
-                <div className="summary">
-                    Showed <b>1-10</b> from <b>150</b>
-                </div>
-                <table className="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>
-                                <a>
-                                    Column
-                                </a>
-                            </th>
-                        </tr>
-                        <tr className="filters">
-                            <td>
-                                <input
-                                    id='filter'
-                                    type='text'
-                                    className="form-control"
-                                    name='filters'
-                                    value=''
-                                />
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr key='1'>
-                            <td>Item</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <nav>
-                    <ul className="pagination">
-                        <li className='page-item' key='1'>
-                            <a className="page-link">
-                                1
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <Summary meta={meta}/>
+                <Table config={config} items={items}/>
+                <Pagination links={meta.links}/>
             </div>
         </div>
     );

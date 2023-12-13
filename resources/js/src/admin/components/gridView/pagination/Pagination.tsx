@@ -16,8 +16,13 @@ function Pagination({links}) {
             <ul className="pagination">
                 {links.map(({url, label, active}) => (
                     <li className={(active ? 'active' : '') + ' page-item'} key={url}>
-                        <a onClick={() => paginate((url ? url : '1'))} className="page-link">
-                            {label}
+                        <a
+                            onClick={() => paginate((null !== url ? url : '1'))}
+                            className={(null === url ? 'disabled' : '') + ' page-link'}
+                        >
+                            {label
+                                .replace('Next &raquo;', '>')
+                                .replace('&laquo; Previous', '<')}
                         </a>
                     </li>
                 ))}

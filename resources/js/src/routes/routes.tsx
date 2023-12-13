@@ -1,6 +1,6 @@
 import {Route, Routes} from 'react-router-dom';
 import {PrivateRoute} from '../public/components/PrivateRoute';
-import {AdminPrivateRoute} from '../admin/components/PrivateRoute';
+import {AdminPrivateRoute} from '../admin/components/routes/PrivateRoute';
 import AdminHomePage from "../admin/pages/site/HomePage";
 import AdminCityCreatePage from "../admin/pages/city/CreatePage";
 import AdminCityEditPage from "../admin/pages/city/EditPage";
