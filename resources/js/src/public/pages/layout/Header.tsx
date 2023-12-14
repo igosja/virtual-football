@@ -7,7 +7,7 @@ import SignupLink from "../../components/layout/header/SignupLink";
 
 function Header() {
     return (
-        <header id="header">
+        <header>
             <Navbar expand={false} className="bg-body-tertiary mb-3">
                 <Container>
                     <Navbar.Brand href={'/'}>VF</Navbar.Brand>
