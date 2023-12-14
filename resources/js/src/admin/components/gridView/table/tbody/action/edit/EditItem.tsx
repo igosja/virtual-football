@@ -4,7 +4,7 @@ import EditIcon from "./EditIcon";
 
 function EditItem({item}) {
     return (
-        <Link to={window.location.pathname + '/' + item.id} title="Edit" aria-label="Edit">
+        <Link to={window.location.pathname + '/edit/' + item.id} title="Edit" aria-label="Edit">
             <EditIcon/>
         </Link>
     );

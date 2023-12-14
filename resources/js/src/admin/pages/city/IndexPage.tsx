@@ -50,7 +50,6 @@ function IndexPage() {
                     },
                 ],
                 apiUrl: 'cities',
-                filterModel: 'search',
             }}/>
         </MainLayout>
     );

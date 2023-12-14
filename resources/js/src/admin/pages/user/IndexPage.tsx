@@ -42,7 +42,6 @@ function IndexPage() {
                     },
                 ],
                 apiUrl: 'users',
-                filterModel: 'search',
             }}/>
         </MainLayout>
     );

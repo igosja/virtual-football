@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import Thead from "./thead/Thead";
 import Tbody from "./tbody/Tbody";
 
