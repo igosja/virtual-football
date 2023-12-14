@@ -1,14 +1,18 @@
 import React, {useEffect, useState} from "react";
 import axios from "../axios/Axios";
-import {useSearchParams} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import Pagination from "./pagination/Pagination";
 import Summary from "./summary/Summary";
 import Table from "./table/Table";
+import MainLayout from "../../pages/layout/MainLayout";
+import Header from "./header/Header";
+import ButtonList from "./buttonList/ButtonList";
 
 function GridView({config}) {
     const initConfig = {
-        columns: [],
         apiUrl: 'users',
+        columns: [],
+        createButton: true,
     };
     const currentConfig = {...initConfig, ...config};
 
@@ -48,13 +52,17 @@ function GridView({config}) {
     }, [setSearchParams]);
 
     return (
-        <div className='row'>
-            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
-                <Summary meta={meta}/>
-                <Table config={config} items={items}/>
-                <Pagination links={meta.links}/>
+        <MainLayout>
+            <Header/>
+            <ButtonList config={currentConfig}/>
+            <div className='row'>
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
+                    <Summary meta={meta}/>
+                    <Table config={currentConfig} items={items}/>
+                    <Pagination links={meta.links}/>
+                </div>
             </div>
-        </div>
+        </MainLayout>
     );
 }
 

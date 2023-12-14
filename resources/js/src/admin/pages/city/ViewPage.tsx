@@ -1,26 +1,23 @@
 import React from 'react';
-import MainLayout from "../layout/MainLayout";
 import DetailView from "../../components/detailView/DetailView";
 
 function ViewPage() {
     return (
-        <MainLayout>
-            <DetailView config={{
-                apiUrl: 'cities',
-                attributes: [
-                    {
-                        captionOptions: {
-                            class: 'col-6',
-                        },
-                        attribute: 'id',
+        <DetailView config={{
+            apiUrl: 'cities',
+            attributes: [
+                {
+                    captionOptions: {
+                        class: 'col-6',
                     },
-                    'country_id',
-                    'name',
-                    'created_at',
-                    'updated_at',
-                ],
-            }}/>
-        </MainLayout>
+                    attribute: 'id',
+                },
+                'country_id',
+                'name',
+                'created_at',
+                'updated_at',
+            ],
+        }}/>
     );
 }
 

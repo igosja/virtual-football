@@ -1,13 +1,13 @@
 import React from "react";
 import {Link, useParams} from "react-router-dom";
 
-function List({config}) {
-    const params = useParams();
-    const currentPath = window.location.pathname.replace('/' + params.id, '');
-
+function Edit({config}) {
     if (!config.editButton) {
         return;
     }
+
+    const params = useParams();
+    const currentPath = window.location.pathname.replace('/' + params.id, '');
 
     return (
         <li className="list-inline-item">
@@ -18,4 +18,4 @@ function List({config}) {
     );
 }
 
-export default React.memo(List);
+export default React.memo(Edit);

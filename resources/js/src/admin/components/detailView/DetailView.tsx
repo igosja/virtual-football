@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import Header from "./header/Header";
 import ButtonList from "./buttonList/ButtonList";
 import Table from "./table/Table";
+import MainLayout from "../../pages/layout/MainLayout";
 
 function DetailView({config}) {
     const initConfig = {
@@ -33,13 +34,13 @@ function DetailView({config}) {
     }, []);
 
     return (
-        <>
+        <MainLayout>
             <Header config={currentConfig} item={item}/>
             <ButtonList config={currentConfig}/>
             <div className="row">
                 <Table config={config} item={item}/>
             </div>
-        </>
+        </MainLayout>
     );
 }
 
