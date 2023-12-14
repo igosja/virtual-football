@@ -50,7 +50,6 @@ function IndexPage() {
                     },
                 ],
                 apiUrl: 'countries',
-                filterModel: 'search',
             }}/>
         </MainLayout>
     );

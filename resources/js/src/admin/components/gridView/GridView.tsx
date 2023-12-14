@@ -9,7 +9,6 @@ function GridView({config}) {
     const initConfig = {
         columns: [],
         apiUrl: 'users',
-        filterModel: 'search',
     };
     const currentConfig = {...initConfig, ...config};
 
