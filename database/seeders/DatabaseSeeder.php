@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
     {
 //        PersonalAccessToken::factory()->create();
 //        User::factory()->create();
+        $this->call([
+            CountrySeeder::class,
+        ]);
     }
 }
