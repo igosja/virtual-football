@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Traits\ModelDateFormat;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 /**
@@ -23,5 +24,5 @@ use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
  */
 class PersonalAccessToken extends SanctumPersonalAccessToken
 {
-    use ModelDateFormat;
+    use HasFactory, ModelDateFormat;
 }

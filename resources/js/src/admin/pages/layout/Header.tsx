@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function Header() {
     return (
-        <header id="header">
+        <header>
             <Navbar expand={false} className="bg-body-tertiary mb-3">
                 <Container>
                     <Navbar.Brand href={'/'}>VF admin</Navbar.Brand>
