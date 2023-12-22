@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-//        PersonalAccessToken::factory()->create();
-//        User::factory()->create();
         $this->call([
+            UserSeeder::class,
+            RoleSeeder::class,
             CountrySeeder::class,
         ]);
     }
