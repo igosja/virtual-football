@@ -4,10 +4,11 @@ import FormView from "../../components/formView/FromView";
 function EditPage() {
     return (
         <FormView config={{
-            apiUrl: 'cities',
+            apiUrl: 'stadiums',
             fields: [
                 'name',
-                'country_id',
+                'city_id',
+                'capacity',
             ],
         }}/>
     );

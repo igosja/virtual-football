@@ -5,7 +5,7 @@ import {ACTION_TYPE} from "../../components/gridView/table/tbody/action/ActionCo
 function IndexPage() {
     return (
         <GridView config={{
-            apiUrl: 'cities',
+            apiUrl: 'stadiums',
             columns: [
                 {
                     attribute: 'id',

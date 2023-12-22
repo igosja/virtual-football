@@ -6,8 +6,8 @@ function CreatePage() {
         <FormView config={{
             apiUrl: 'cities',
             fields: [
-                'country_id',
                 'name',
+                'country_id',
             ],
         }}/>
     );

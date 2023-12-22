@@ -4,7 +4,7 @@ import DetailView from "../../components/detailView/DetailView";
 function ViewPage() {
     return (
         <DetailView config={{
-            apiUrl: 'cities',
+            apiUrl: 'stadiums',
             attributes: [
                 {
                     captionOptions: {
@@ -13,7 +13,8 @@ function ViewPage() {
                     attribute: 'id',
                 },
                 'name',
-                'country_id',
+                'city_id',
+                'capacity',
                 'created_at',
                 'updated_at',
             ],
