@@ -64,8 +64,8 @@ class CityController extends AbstractController
      */
     public function store(StoreRequest $request): CityResource
     {
-        $country = City::create($request->validated());
-        return new CityResource($country);
+        $city = City::create($request->validated());
+        return new CityResource($city);
     }
 
     /**
