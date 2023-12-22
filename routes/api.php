@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\StadiumController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('', 'store');
         Route::get('{stadium}', 'show');
         Route::put('{stadium}', 'update');
+    });
+    Route::controller(TeamController::class)->prefix('teams')->group(function () {
+        Route::get('', 'index');
+        Route::post('', 'store');
+        Route::get('{team}', 'show');
+        Route::put('{team}', 'update');
     });
     Route::controller(UserController::class)->prefix('users')->group(function () {
         Route::get('', 'index');
