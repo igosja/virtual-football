@@ -16,6 +16,10 @@ import AdminStadiumCreatePage from "../admin/pages/stadium/CreatePage";
 import AdminStadiumEditPage from "../admin/pages/stadium/EditPage";
 import AdminStadiumIndexPage from "../admin/pages/stadium/IndexPage";
 import AdminStadiumViewPage from "../admin/pages/stadium/ViewPage";
+import AdminTeamCreatePage from "../admin/pages/team/CreatePage";
+import AdminTeamEditPage from "../admin/pages/team/EditPage";
+import AdminTeamIndexPage from "../admin/pages/team/IndexPage";
+import AdminTeamViewPage from "../admin/pages/team/ViewPage";
 import AdminUserIndexPage from "../admin/pages/user/IndexPage";
 import AdminUserViewPage from "../admin/pages/user/ViewPage";
 import ErrorPage from "../public/pages/site/ErrorPage";
@@ -51,6 +55,10 @@ const useRoutes = () => {
                 <Route path="/admin/stadiums/:id" element={<AdminStadiumViewPage/>}/>
                 <Route path="/admin/stadiums/create" element={<AdminStadiumCreatePage/>}/>
                 <Route path="/admin/stadiums/edit/:id" element={<AdminStadiumEditPage/>}/>
+                <Route path="/admin/teams" element={<AdminTeamIndexPage/>}/>
+                <Route path="/admin/teams/:id" element={<AdminTeamViewPage/>}/>
+                <Route path="/admin/teams/create" element={<AdminTeamCreatePage/>}/>
+                <Route path="/admin/teams/edit/:id" element={<AdminTeamEditPage/>}/>
                 <Route path="/admin/users" element={<AdminUserIndexPage/>}/>
                 <Route path="/admin/users/:id" element={<AdminUserViewPage/>}/>
             </Route>

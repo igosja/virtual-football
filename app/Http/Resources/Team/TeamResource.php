@@ -1,25 +1,24 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Resources\Stadium;
+namespace App\Http\Resources\Team;
 
 use App\Http\Resources\AbstractResource;
 
 /**
- * Class StadiumResource
- * @package App\Http\Resources\Stadium
+ * Class TeamResource
+ * @package App\Http\Resources\Team
  */
-class StadiumResource extends AbstractResource
+class TeamResource extends AbstractResource
 {
     /**
      * @var array $fields
      */
     protected array $fields = [
         'id',
-        'capacity',
-        'city_id',
         'created_at',
         'name',
+        'stadium_id',
         'updated_at',
     ];
 }

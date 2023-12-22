@@ -23,6 +23,7 @@ function Header() {
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Link to={'/admin'} className="nav-link">Home</Link>
                                 <Link to={'/admin/users'} className="nav-link">Users</Link>
+                                <Link to={'/admin/teams'} className="nav-link">Teams</Link>
                                 <Link to={'/admin/stadiums'} className="nav-link">Stadiums</Link>
                                 <Link to={'/admin/cities'} className="nav-link">Cities</Link>
                                 <Link to={'/admin/countries'} className="nav-link">Countries</Link>
