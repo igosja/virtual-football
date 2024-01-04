@@ -20,7 +20,7 @@ return new class extends Migration {
                     $table->id();
                     $this->floatDate('created_at', $table);
                     $table->string('name');
-                    $table->foreignId('stadium_id')->references('id')->on('stadiums');
+                    $table->foreignId('stadium_id')->unique()->references('id')->on('stadiums');
                     $this->floatDate('updated_at', $table);
                 }
             );

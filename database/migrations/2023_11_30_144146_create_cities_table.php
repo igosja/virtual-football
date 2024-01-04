@@ -22,6 +22,8 @@ return new class extends Migration {
                     $this->floatDate('created_at', $table);
                     $table->string('name');
                     $this->floatDate('updated_at', $table);
+
+                    $table->unique(['country_id', 'name']);
                 }
             );
         }
