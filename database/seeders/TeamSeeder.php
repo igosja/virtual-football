@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\City;
-use App\Models\Stadium;
 use App\Models\Team;
 use Illuminate\Database\Seeder;
 
