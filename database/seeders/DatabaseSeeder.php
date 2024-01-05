@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             StadiumSeeder::class,
             TeamSeeder::class,
+            NameSeeder::class,
         ]);
     }
 }
