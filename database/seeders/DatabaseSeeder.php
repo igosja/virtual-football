@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             StadiumSeeder::class,
             TeamSeeder::class,
             NameSeeder::class,
+            CountryNameSeeder::class,
         ]);
     }
 }
