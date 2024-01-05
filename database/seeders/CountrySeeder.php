@@ -218,12 +218,12 @@ class CountrySeeder extends Seeder
     ];
 
     /**
-     * Run the database seeds.
+     * @return void
      */
     public function run(): void
     {
-        foreach ($this->list as $item) {
-            Country::create(['name' => $item]);
+        foreach ($this->list as $country) {
+            Country::create(['name' => $country]);
         }
     }
 }

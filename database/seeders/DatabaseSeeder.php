@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             RoleSeeder::class,
             CountrySeeder::class,
+            CitySeeder::class,
+            StadiumSeeder::class,
+            TeamSeeder::class,
         ]);
     }
 }
