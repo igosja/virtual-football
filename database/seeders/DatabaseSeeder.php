@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             NameSeeder::class,
             CountryNameSeeder::class,
             SurnameSeeder::class,
+            CountrySurnameSeeder::class,
         ]);
     }
 }
