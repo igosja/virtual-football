@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\Name;
 use App\Models\Surname;
 use Illuminate\Database\Seeder;
 
