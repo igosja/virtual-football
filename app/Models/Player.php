@@ -10,12 +10,12 @@ namespace App\Models;
  * @property int id
  * @property int age
  * @property int country_id
- * @property int created_at
+ * @property float created_at
  * @property int name_id
  * @property int power
  * @property int surname_id
  * @property int team_id
- * @property int updated_at
+ * @property float updated_at
  */
 class Player extends AbstractModel
 {

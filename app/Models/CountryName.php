@@ -8,9 +8,9 @@ namespace App\Models;
  * @package App\Models
  *
  * @property int country_id
- * @property int created_at
+ * @property float created_at
  * @property int name_id
- * @property int updated_at
+ * @property float updated_at
  */
 class CountryName extends AbstractModel
 {
