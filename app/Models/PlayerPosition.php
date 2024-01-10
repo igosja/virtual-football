@@ -4,23 +4,21 @@ declare(strict_types=1);
 namespace App\Models;
 
 /**
- * Class CountrySurname
+ * Class PlayerPosition
  * @package App\Models
  *
- * @property int country_id
  * @property int created_at
- * @property int popularity
- * @property int surname_id
+ * @property int player_id
+ * @property int position
  * @property int updated_at
  */
-class CountrySurname extends AbstractModel
+class PlayerPosition extends AbstractModel
 {
     /**
      * @var string[] $fillable
      */
     protected $fillable = [
-        'country_id',
-        'popularity',
-        'surname_id',
+        'player_id',
+        'position',
     ];
 }
