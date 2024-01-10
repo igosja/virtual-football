@@ -10,9 +10,9 @@ namespace App\Models;
  * @property int id
  * @property int capacity
  * @property int city_id
- * @property int created_at
+ * @property float created_at
  * @property string name
- * @property int updated_at
+ * @property float updated_at
  */
 class Stadium extends AbstractModel
 {

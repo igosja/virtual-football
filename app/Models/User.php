@@ -14,12 +14,12 @@ use Spatie\Permission\Traits\HasRoles;
  * @package App\Models
  *
  * @property int id
- * @property int created_at
+ * @property float created_at
  * @property string email
  * @property int email_verified_at
  * @property string login
  * @property string password
- * @property int updated_at
+ * @property float updated_at
  */
 class User extends \Illuminate\Foundation\Auth\User
 {

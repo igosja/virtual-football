@@ -7,10 +7,10 @@ namespace App\Models;
  * Class PlayerPosition
  * @package App\Models
  *
- * @property int created_at
+ * @property float created_at
  * @property int player_id
  * @property int position
- * @property int updated_at
+ * @property float updated_at
  */
 class PlayerPosition extends AbstractModel
 {

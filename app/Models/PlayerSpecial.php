@@ -7,11 +7,11 @@ namespace App\Models;
  * Class PlayerSpecial
  * @package App\Models
  *
- * @property int created_at
+ * @property float created_at
  * @property int level
  * @property int player_id
  * @property int special
- * @property int updated_at
+ * @property float updated_at
  */
 class PlayerSpecial extends AbstractModel
 {

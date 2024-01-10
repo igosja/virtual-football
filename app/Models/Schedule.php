@@ -8,11 +8,11 @@ namespace App\Models;
  * @package App\Models
  *
  * @property int id
- * @property int created_at
+ * @property float created_at
  * @property int season
  * @property int stage
  * @property int tournament_type
- * @property int updated_at
+ * @property float updated_at
  */
 class Schedule extends AbstractModel
 {
