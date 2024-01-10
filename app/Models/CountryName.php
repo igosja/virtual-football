@@ -21,9 +21,4 @@ class CountryName extends AbstractModel
         'country_id',
         'name_id',
     ];
-
-    /**
-     * @var string $table
-     */
-    protected $table = 'country_name';
 }

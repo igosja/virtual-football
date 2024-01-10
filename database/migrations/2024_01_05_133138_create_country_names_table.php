@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    private const TABLE = 'country_name';
+    private const TABLE = 'country_names';
 
     /**
      * @return void
