@@ -20,7 +20,8 @@ class Schedule extends AbstractModel
      * @var string[] $fillable
      */
     protected $fillable = [
-        'name',
-        'stadium_id',
+        'season',
+        'stage',
+        'tournament_type',
     ];
 }
