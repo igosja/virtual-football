@@ -339,7 +339,6 @@ class StadiumSeeder extends Seeder
         ['city_id' => 259, 'name' => 'Jose Zorrilla'],
     ];
 
-
     /**
      * @return void
      */

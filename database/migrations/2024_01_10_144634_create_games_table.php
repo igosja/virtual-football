@@ -19,11 +19,11 @@ return new class extends Migration {
                 function (Blueprint $table) {
                     $table->id();
                     $this->floatDate('created_at', $table);
-                    $table->foreignId('guest_team_id')->references('id')->on('teams');
-                    $table->foreignId('home_team_id')->references('id')->on('teams');
+                    $table->foreignId('guest_team_id')->constrained('teams');
+                    $table->foreignId('home_team_id')->constrained('teams');
                     $table->boolean('is_played')->default(false);
                     $table->foreignId('schedule_id')->constrained();
-                    $table->foreignId('stadium_id')->unique()->references('id')->on('stadiums');
+                    $table->foreignId('stadium_id')->unique()->constrained('stadiums');
                     $this->floatDate('updated_at', $table);
                 }
             );

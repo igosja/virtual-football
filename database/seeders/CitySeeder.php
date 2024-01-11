@@ -295,7 +295,6 @@ class CitySeeder extends Seeder
         ['created_at' => 1704891216, 'country_id' => 169, 'name' => 'Vitoria-Gasteiz', 'updated_at' => 1704891216],
     ];
 
-
     /**
      * @return void'
      */
