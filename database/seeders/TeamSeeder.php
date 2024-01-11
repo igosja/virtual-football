@@ -339,14 +339,22 @@ class TeamSeeder extends Seeder
         ['stadium_id' => 321, 'name' => 'Valladolid'],
     ];
 
-
     /**
      * @return void
      */
     public function run(): void
     {
         foreach ($this->list as $item) {
-            Team::create(['stadium_id' => $item['stadium_id'], 'name' => $item['name']]);
+            Team::create([
+                'base_id' => 1,
+                'base_medical_id' => 1,
+                'base_physical_id' => 1,
+                'base_school_id' => 1,
+                'base_scout_id' => 1,
+                'base_training_id' => 1,
+                'name' => $item['name'],
+                'stadium_id' => $item['stadium_id'],
+            ]);
         }
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    private const TABLE = 'teams';
+    private const TABLE = 'base_schools';
 
     /**
      * @return void
@@ -18,16 +18,18 @@ return new class extends Migration {
                 self::TABLE,
                 function (Blueprint $table) {
                     $table->id();
-                    $table->foreignId('base_id')->constrained();
-                    $table->foreignId('base_medical_id')->constrained();
-                    $table->foreignId('base_physical_id')->constrained();
-                    $table->foreignId('base_school_id')->constrained();
-                    $table->foreignId('base_scout_id')->constrained();
-                    $table->foreignId('base_training_id')->constrained();
+                    $table->unsignedTinyInteger('build_speed');
                     $this->floatDate('created_at', $table);
-                    $table->string('name');
-                    $table->foreignId('stadium_id')->unique()->constrained('stadiums');
+                    $table->unsignedTinyInteger('level');
+                    $table->unsignedTinyInteger('min_base_level');
+                    $table->unsignedTinyInteger('player_count');
+                    $table->unsignedTinyInteger('power');
+                    $table->unsignedMediumInteger('price_buy');
+                    $table->unsignedMediumInteger('price_sell');
+                    $table->unsignedTinyInteger('school_speed');
                     $this->floatDate('updated_at', $table);
+                    $table->unsignedTinyInteger('with_special');
+                    $table->unsignedTinyInteger('with_style');
                 }
             );
         }
