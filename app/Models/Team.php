@@ -8,12 +8,12 @@ namespace App\Models;
  * @package App\Models
  *
  * @property int id
- * @property int base_id
- * @property int base_medical_id
- * @property int base_physical_id
- * @property int base_school_id
- * @property int base_scout_id
- * @property int base_training_id
+ * @property int base_level
+ * @property int base_medical_level
+ * @property int base_physical_level
+ * @property int base_school_level
+ * @property int base_scout_level
+ * @property int base_training_level
  * @property float created_at
  * @property string name
  * @property int stadium_id
@@ -25,12 +25,12 @@ class Team extends AbstractModel
      * @var string[] $fillable
      */
     protected $fillable = [
-        'base_id',
-        'base_medical_id',
-        'base_physical_id',
-        'base_school_id',
-        'base_scout_id',
-        'base_training_id',
+        'base_level',
+        'base_medical_level',
+        'base_physical_level',
+        'base_school_level',
+        'base_scout_level',
+        'base_training_level',
         'name',
         'stadium_id',
     ];

@@ -18,12 +18,12 @@ return new class extends Migration {
                 self::TABLE,
                 function (Blueprint $table) {
                     $table->id();
-                    $table->foreignId('base_id')->constrained();
-                    $table->foreignId('base_medical_id')->constrained();
-                    $table->foreignId('base_physical_id')->constrained();
-                    $table->foreignId('base_school_id')->constrained();
-                    $table->foreignId('base_scout_id')->constrained();
-                    $table->foreignId('base_training_id')->constrained();
+                    $table->unsignedTinyInteger('base_level')->default(0);
+                    $table->unsignedTinyInteger('base_medical_level')->default(0);
+                    $table->unsignedTinyInteger('base_physical_level')->default(0);
+                    $table->unsignedTinyInteger('base_school_level')->default(0);
+                    $table->unsignedTinyInteger('base_scout_level')->default(0);
+                    $table->unsignedTinyInteger('base_training_level')->default(0);
                     $this->floatDate('created_at', $table);
                     $table->string('name');
                     $table->foreignId('stadium_id')->unique()->constrained('stadiums');
