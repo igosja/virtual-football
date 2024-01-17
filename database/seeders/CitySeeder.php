@@ -4,13 +4,12 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\City;
-use Illuminate\Database\Seeder;
 
 /**
  * Class CitySeeder
  * @package Database\Seeders
  */
-class CitySeeder extends Seeder
+class CitySeeder extends AbstractSeeder
 {
     /**
      * @var array|array[] $data

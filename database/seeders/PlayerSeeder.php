@@ -9,13 +9,12 @@ use App\Models\CountrySurname;
 use App\Models\Player;
 use App\Models\Stadium;
 use App\Models\Team;
-use Illuminate\Database\Seeder;
 
 /**
  * Class PlayerSeeder
  * @package Database\Seeders
  */
-class PlayerSeeder extends Seeder
+class PlayerSeeder extends AbstractSeeder
 {
     /**
      * @return void
