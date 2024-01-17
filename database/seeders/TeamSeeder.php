@@ -346,12 +346,6 @@ class TeamSeeder extends Seeder
     {
         foreach ($this->list as $item) {
             Team::create([
-                'base_id' => 1,
-                'base_medical_id' => 1,
-                'base_physical_id' => 1,
-                'base_school_id' => 1,
-                'base_scout_id' => 1,
-                'base_training_id' => 1,
                 'name' => $item['name'],
                 'stadium_id' => $item['stadium_id'],
             ]);
