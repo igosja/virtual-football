@@ -4,13 +4,12 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Country;
-use Illuminate\Database\Seeder;
 
 /**
  * Class CountrySeeder
  * @package Database\Seeders
  */
-class CountrySeeder extends Seeder
+class CountrySeeder extends AbstractSeeder
 {
     /**
      * @var array|array[] $data

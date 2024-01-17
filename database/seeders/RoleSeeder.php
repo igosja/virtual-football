@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -12,7 +11,7 @@ use Spatie\Permission\Models\Role;
  * Class RoleSeeder
  * @package Database\Seeders
  */
-class RoleSeeder extends Seeder
+class RoleSeeder extends AbstractSeeder
 {
     /**
      * @return void

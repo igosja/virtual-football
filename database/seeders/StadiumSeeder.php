@@ -4,13 +4,12 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Stadium;
-use Illuminate\Database\Seeder;
 
 /**
  * Class StadiumSeeder
  * @package Database\Seeders
  */
-class StadiumSeeder extends Seeder
+class StadiumSeeder extends AbstractSeeder
 {
     /**
      * @var string[] $list

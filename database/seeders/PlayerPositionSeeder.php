@@ -5,13 +5,12 @@ namespace Database\Seeders;
 
 use App\Models\Player;
 use App\Models\PlayerPosition;
-use Illuminate\Database\Seeder;
 
 /**
  * Class PlayerPositionSeeder
  * @package Database\Seeders
  */
-class PlayerPositionSeeder extends Seeder
+class PlayerPositionSeeder extends AbstractSeeder
 {
     /**
      * @return void
