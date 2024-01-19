@@ -75,14 +75,27 @@ class CreateTeamPlayersService implements Execute
     }
 
     /**
+     * @return void
+     */
+    private function setCountryId(): void
+    {
+        /**
+         * @var Team $team
+         */
+        $team = Team::findOrFail($this->teamId);
+        $this->countryId = $team->stadium->city->country_id;
+    }
+
+    /**
      * @return bool
      */
-    private function createTeamPlayers()
+    private function createTeamPlayers(): bool
     {
         for ($i = 0, $countPosition = count(self::POSITION_LIST); $i<$countPosition; $i++) {
             (new CreatePlayerService(
                 $this->getAge($i),
                 $this->countryId,
+                $this->getFatigue(),
                 $this->getNameId(),
                 $this->getPosition($i),
                 $this->getPower($i),
@@ -108,16 +121,9 @@ class CreateTeamPlayersService implements Execute
         return $age;
     }
 
-    /**
-     * @return void
-     */
-    private function setCountryId(): void
+    private function getFatigue()
     {
-        /**
-         * @var Team $team
-         */
-        $team = Team::findOrFail($this->teamId);
-        $this->countryId = $team->stadium->city->country_id;
+        return 50;
     }
 
     /**

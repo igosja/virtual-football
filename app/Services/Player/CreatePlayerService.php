@@ -23,6 +23,11 @@ class CreatePlayerService implements Execute
     private int $countryId;
 
     /**
+     * @var int $fatigue
+     */
+    private int $fatigue;
+
+    /**
      * @var int $nameId
      */
     private int $nameId;
@@ -55,6 +60,7 @@ class CreatePlayerService implements Execute
     /**
      * @param int $age
      * @param int $countryId
+     * @param int $fatigue
      * @param int $nameId
      * @param int $position
      * @param int $power
@@ -64,6 +70,7 @@ class CreatePlayerService implements Execute
     public function __construct(
         int $age,
         int $countryId,
+        int $fatigue,
         int $nameId,
         int $position,
         int $power,
@@ -72,6 +79,7 @@ class CreatePlayerService implements Execute
     ) {
         $this->age = $age;
         $this->countryId = $countryId;
+        $this->fatigue = $fatigue;
         $this->nameId = $nameId;
         $this->position = $position;
         $this->power = $power;
@@ -96,6 +104,7 @@ class CreatePlayerService implements Execute
         $this->player = Player::create([
             'age' => $this->age,
             'country_id' => $this->countryId,
+            'fatigue' => $this->fatigue,
             'name_id' => $this->nameId,
             'power' => $this->power,
             'surname_id' => $this->surnameId,

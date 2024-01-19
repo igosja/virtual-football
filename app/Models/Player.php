@@ -11,6 +11,7 @@ namespace App\Models;
  * @property int age
  * @property int country_id
  * @property float created_at
+ * @property int fatigue
  * @property int name_id
  * @property int power
  * @property int surname_id
@@ -26,6 +27,7 @@ class Player extends AbstractModel
         'age',
         'country_id',
         'created_at',
+        'fatigue',
         'name_id',
         'power',
         'surname_id',
