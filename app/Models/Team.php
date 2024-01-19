@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 /**
  * Class Team
  * @package App\Models
@@ -18,6 +20,8 @@ namespace App\Models;
  * @property string name
  * @property int stadium_id
  * @property float updated_at
+ *
+ * @property-read Stadium stadium
  */
 class Team extends AbstractModel
 {
@@ -34,4 +38,12 @@ class Team extends AbstractModel
         'name',
         'stadium_id',
     ];
+
+    /**
+     * @return BelongsTo
+     */
+    public function stadium(): BelongsTo
+    {
+        return $this->belongsTo(Stadium::class);
+    }
 }

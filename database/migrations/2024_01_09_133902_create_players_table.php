@@ -21,6 +21,7 @@ return new class extends Migration {
                     $table->unsignedTinyInteger('age')->default(18);
                     $table->foreignId('country_id')->constrained();
                     $this->floatDate('created_at', $table);
+                    $table->unsignedTinyInteger('fatigue');
                     $table->foreignId('name_id')->constrained();
                     $table->unsignedTinyInteger('power');
                     $table->foreignId('surname_id')->constrained();

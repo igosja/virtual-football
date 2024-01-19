@@ -20,13 +20,11 @@ class DatabaseSeeder extends AbstractSeeder
             CountrySeeder::class,
             CitySeeder::class,
             StadiumSeeder::class,
-            TeamSeeder::class,
             NameSeeder::class,
             CountryNameSeeder::class,
             SurnameSeeder::class,
             CountrySurnameSeeder::class,
-            PlayerSeeder::class,
-            PlayerPositionSeeder::class,
+            TeamSeeder::class,
         ]);
     }
 }

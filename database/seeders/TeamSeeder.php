@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\Team;
+use App\Services\Team\CreateTeamService;
 
 /**
  * Class TeamSeeder
@@ -344,10 +345,7 @@ class TeamSeeder extends AbstractSeeder
     public function run(): void
     {
         foreach ($this->list as $item) {
-            Team::create([
-                'name' => $item['name'],
-                'stadium_id' => $item['stadium_id'],
-            ]);
+            (new CreateTeamService($item['name'], $item['stadium_id']))->execute();
         }
     }
 }
