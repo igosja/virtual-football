@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Jobs\ProcessLog;
-use App\Services\LogProcessor;
+use App\Services\Log\LogProcessor;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 

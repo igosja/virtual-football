@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\Jobs;
 
 use App\Models\Log;
-use App\Services\LogProcessor;
+use App\Services\Log\LogProcessor;
 
 /**
  * Class ProcessLog
