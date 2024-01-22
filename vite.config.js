@@ -7,4 +7,9 @@ export default defineConfig({
         laravel(['resources/js/index.tsx']),
         react(),
     ],
+    server: {
+        fs: {
+            deny: ['.env', '.env.*']
+        }
+    }
 });
