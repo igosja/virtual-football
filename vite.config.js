@@ -6,10 +6,5 @@ export default defineConfig({
     plugins: [
         laravel(['resources/js/index.tsx']),
         react(),
-    ],
-    server: {
-        fs: {
-            deny: ['.env', '.env.*']
-        }
-    }
+    ]
 });
