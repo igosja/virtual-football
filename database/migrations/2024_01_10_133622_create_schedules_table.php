@@ -21,6 +21,7 @@ return new class extends Migration {
                     $this->floatDate('created_at', $table);
                     $table->unsignedTinyInteger('season');
                     $table->unsignedTinyInteger('stage');
+                    $table->unsignedBigInteger('time');
                     $table->unsignedTinyInteger('tournament_type');
                     $this->floatDate('updated_at', $table);
                 }

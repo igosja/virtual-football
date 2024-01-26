@@ -11,6 +11,7 @@ namespace App\Models;
  * @property float created_at
  * @property int season
  * @property int stage
+ * @property int time
  * @property int tournament_type
  * @property float updated_at
  */
@@ -22,6 +23,7 @@ class Schedule extends AbstractModel
     protected $fillable = [
         'season',
         'stage',
+        'time',
         'tournament_type',
     ];
 }
