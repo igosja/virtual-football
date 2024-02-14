@@ -26,6 +26,7 @@ class DatabaseSeeder extends AbstractSeeder
             CountrySurnameSeeder::class,
             TeamSeeder::class,
             ScheduleSeeder::class,
+            ChampionshipSeeder::class,
         ]);
     }
 }

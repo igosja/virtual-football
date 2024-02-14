@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    private const TABLE = 'schedules';
+    private const TABLE = 'championships';
 
     /**
      * @return void
@@ -20,15 +20,15 @@ return new class extends Migration {
                     $table->id();
                     $table->foreignId('country_id')->constrained();
                     $this->floatDate('created_at', $table);
-                    $table->tinyInteger('difference');
-                    $table->unsignedTinyInteger('division')->default(1);
+                    $table->tinyInteger('difference')->default(0);
+                    $table->unsignedTinyInteger('division');
                     $table->unsignedTinyInteger('drawn')->default(0);
                     $table->unsignedTinyInteger('game')->default(0);
                     $table->unsignedTinyInteger('loss')->default(0);
                     $table->unsignedTinyInteger('miss')->default(0);
-                    $table->unsignedTinyInteger('place')->default(0);
+                    $table->unsignedTinyInteger('place');
                     $table->unsignedTinyInteger('point')->default(0);
-                    $table->unsignedTinyInteger('season')->default(0);
+                    $table->unsignedTinyInteger('season');
                     $table->unsignedTinyInteger('score')->default(0);
                     $table->foreignId('team_id')->constrained();
                     $this->floatDate('updated_at', $table);
